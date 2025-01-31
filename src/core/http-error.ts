@@ -1,7 +1,7 @@
-import { HttpErrorResponse, HttpErrorStatus } from "../types";
+import { HttpErrorResponse, HttpErrorStatus } from "../utils/types";
 
 export class HttpError extends Error {
-  readonly name = 'HttpError';
+  readonly name = "HttpError";
 
   readonly status: HttpErrorStatus;
 
@@ -9,10 +9,15 @@ export class HttpError extends Error {
 
   readonly url: string;
 
-  constructor(status: HttpErrorStatus, message: string, url: string, data?: unknown) {
+  constructor(
+    status: HttpErrorStatus,
+    message: string,
+    url: string,
+    data?: unknown,
+  ) {
     super(message);
     this.status = status;
-    this.data = typeof data === 'string' ? data : JSON.stringify(data);
+    this.data = typeof data === "string" ? data : JSON.stringify(data);
     this.url = url;
   }
 

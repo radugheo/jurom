@@ -1,13 +1,11 @@
-import { AxiosInstance, AxiosRequestConfig } from 'axios';
-import { getAxiosClient } from '../utils/axios';
-import { HttpClientOptions } from '../types';
+import { AxiosInstance, AxiosRequestConfig } from "axios";
+import { getAxiosClient } from "../utils/axios";
+import { HttpClientOptions } from "../utils/types";
 
 export class HttpClient {
   private client: AxiosInstance;
 
-  constructor(
-    config?: HttpClientOptions,
-  ) {
+  constructor(config?: HttpClientOptions) {
     this.client = getAxiosClient(config);
   }
 
