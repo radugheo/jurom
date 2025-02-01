@@ -14,6 +14,37 @@ export type HttpErrorResponse = {
   url: string;
 };
 
-export interface BaseProps {
-  isDarkMode?: boolean;
-}
+export type ColorScheme = {
+  background: string;
+  surface: string;
+  accent: string;
+  text: {
+    primary: string;
+    secondary: string;
+  };
+  status: {
+    success: string;
+    error: string;
+  };
+  border: string;
+};
+
+export type ThemeType = {
+  colors: ColorScheme;
+  spacing: {
+    sm: number;
+    md: number;
+    lg: number;
+  };
+  typography: {
+    fontSize: {
+      sm: number;
+      md: number;
+      lg: number;
+    };
+    fontFamily: {
+      regular: string;
+      bold: string;
+    };
+  };
+};

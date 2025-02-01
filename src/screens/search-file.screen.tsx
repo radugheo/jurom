@@ -1,31 +1,38 @@
+import { Search } from "lucide-react-native";
 import React from "react";
-import { View, Text } from "react-native";
-import { StyleSheet } from "react-native";
-import { TopBar } from "../components/TopBar/top-bar.component";
+import { View, Text, TextInput } from "react-native";
+import { createStyles } from "./search-file.styles";
+import { useThemedStyles } from "../hooks/use-themed-styles";
 
 export const SearchFileScreen: React.FC = () => {
-  return (
-    <View>
-      <>
-        <TopBar isDarkMode={true}></TopBar>
+  const styles = useThemedStyles(createStyles);
 
-        <View style={{ flex: 1 }}>
-          <Text style={styles.text}>TEST</Text>
-        </View>
-      </>
+  return (
+    <View style={styles.container}>
+      <View style={styles.searchContainer}>
+        <Search size={20} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Caută dosar după număr..."
+        />
+      </View>
+
+      <View style={styles.recentSection}>
+        <Text style={styles.sectionTitle}>Dosare recente</Text>
+
+        {/* File Items */}
+        {[1, 2, 3].map((_, index) => (
+          <View key={index} style={styles.fileItem}>
+            <View>
+              <Text style={styles.fileNumber}>3299/299/2024</Text>
+              <Text style={styles.courthouse}>Tribunalul București</Text>
+            </View>
+            <View style={styles.statusBadge}>
+              <Text style={styles.statusText}>În curs</Text>
+            </View>
+          </View>
+        ))}
+      </View>
     </View>
   );
 };
-
-export const styles = StyleSheet.create({
-  container: {
-    marginBottom: 20,
-  },
-  text: {
-    marginTop: 50,
-    marginLeft: 40,
-    fontSize: 30,
-    fontWeight: "bold",
-    fontFamily: "Montserrat-Bold",
-  },
-});

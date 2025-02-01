@@ -1,24 +1,26 @@
 import { SearchFileScreen } from "../../screens/search-file.screen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { theme } from "../../utils/theme";
 import { Search, Calendar } from 'lucide-react-native';
+import { useTheme } from "../../hooks/use-theme";
 
 const Tab = createBottomTabNavigator();
 
 export const NavBar = () => {
+  const {theme} = useTheme();
+
   return (
     <Tab.Navigator
     screenOptions={{
       headerShown: false,
       tabBarStyle: { 
-        backgroundColor: theme.colors.dark.background,
+        backgroundColor: theme.colors.background,
         borderTopWidth: 0,
         elevation: 0,
         height: 60,
         paddingBottom: 8
       },
-      tabBarActiveTintColor: theme.colors.dark.accent,
-      tabBarInactiveTintColor: theme.colors.dark.text.primary
+      tabBarActiveTintColor: theme.colors.accent,
+      tabBarInactiveTintColor: theme.colors.text.primary
     }}
   >
     <Tab.Screen 
