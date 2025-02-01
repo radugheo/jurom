@@ -1,21 +1,20 @@
 import { StyleSheet } from "react-native";
 import { ThemeType } from "../utils/types";
 
-export const createStyles = (theme: ThemeType) =>
-  StyleSheet.create({
+export const createStyles = (theme: ThemeType) => {
+  console.log("Styles being recreated");
+  return StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#f0f0f0",
+      backgroundColor: theme.colors.background,
     },
     searchContainer: {
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: "#EBF5FF",
+      margin: 16,
       padding: 12,
       borderRadius: 8,
-      marginBottom: 24,
     },
     searchInput: {
       flex: 1,
@@ -23,22 +22,19 @@ export const createStyles = (theme: ThemeType) =>
       fontSize: 16,
       color: theme.colors.text.primary,
     },
-    searchField: {
-      color: theme.colors.text.primary,
-    },
     recentSection: {
-      gap: 16,
+      paddingHorizontal: 16,
     },
     sectionTitle: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: "600",
-      marginBottom: 8,
+      marginBottom: 16,
       color: theme.colors.text.primary,
     },
     fileItem: {
       flexDirection: "row",
       justifyContent: "space-between",
-      alignItems: "flex-start",
+      alignItems: "center",
       paddingVertical: 12,
       borderBottomWidth: 1,
       borderBottomColor: "#E5E7EB",
@@ -64,3 +60,4 @@ export const createStyles = (theme: ThemeType) =>
       fontSize: 14,
     },
   });
+};

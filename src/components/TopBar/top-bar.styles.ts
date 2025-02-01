@@ -6,7 +6,7 @@ export const createStyles = (theme: ThemeType) => StyleSheet.create({
         height: 50,
         marginTop: 50,
         paddingHorizontal: 20,
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.topBar.background,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -19,6 +19,6 @@ export const createStyles = (theme: ThemeType) => StyleSheet.create({
     title: {
         fontWeight: '600',
         fontSize: 18,
-        color: theme.colors.text.primary
+        color: theme.topBar.textColor
     }
 });

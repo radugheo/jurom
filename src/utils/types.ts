@@ -29,7 +29,13 @@ export type ColorScheme = {
   border: string;
 };
 
+export type TopBarScheme = {
+  background: string;
+  textColor: string;
+};
+
 export type ThemeType = {
+  topBar: TopBarScheme;
   colors: ColorScheme;
   spacing: {
     sm: number;

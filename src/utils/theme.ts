@@ -22,6 +22,10 @@ const baseTheme = {
 export const theme: { light: ThemeType; dark: ThemeType } = {
   light: {
     ...baseTheme,
+    topBar: {
+      background: "#2563EB",
+      textColor: "#FFFFFF",
+    },
     colors: {
       background: "#FFFFFF",
       surface: "#F3F4F6",
@@ -39,6 +43,10 @@ export const theme: { light: ThemeType; dark: ThemeType } = {
   },
   dark: {
     ...baseTheme,
+    topBar: {
+      background: "#0F172A",
+      textColor: "#60A5FA",
+    },
     colors: {
       background: "#1F2937",
       surface: "#374151",
@@ -46,6 +54,8 @@ export const theme: { light: ThemeType; dark: ThemeType } = {
       text: {
         primary: "#F9FAFB",
         secondary: "#E5E7EB",
+        // primary: "#1F2937",
+        // secondary: "#4B5563",
       },
       status: {
         success: "#34D399",
