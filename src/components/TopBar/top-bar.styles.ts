@@ -17,8 +17,9 @@ export const createStyles = (theme: ThemeType) => StyleSheet.create({
         gap: 12
     },
     title: {
-        fontWeight: '600',
-        fontSize: 18,
+        fontWeight: '700',
+        fontFamily: theme.typography.fontFamily.bold,
+        fontSize: theme.typography.fontSize.xl,
         color: theme.topBar.textColor
     }
 });

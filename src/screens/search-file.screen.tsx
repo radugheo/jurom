@@ -14,6 +14,7 @@ export const SearchFileScreen: React.FC = () => {
         <TextInput
           style={styles.searchInput}
           placeholder="Caută dosar după număr..."
+          placeholderTextColor={"#B3C3E1"}
         />
       </View>
 

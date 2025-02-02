@@ -16,17 +16,20 @@ export type HttpErrorResponse = {
 
 export type ColorScheme = {
   background: string;
+  secondaryBackground: string;
   surface: string;
   accent: string;
   text: {
     primary: string;
     secondary: string;
+    ternary?: string;
   };
   status: {
     success: string;
     error: string;
   };
   border: string;
+  divider: string;
 };
 
 export type TopBarScheme = {
@@ -37,6 +40,10 @@ export type TopBarScheme = {
 export type ThemeType = {
   topBar: TopBarScheme;
   colors: ColorScheme;
+  inProgress: {
+    background: string;
+    textColor: string;
+  };
   spacing: {
     sm: number;
     md: number;
@@ -47,6 +54,7 @@ export type ThemeType = {
       sm: number;
       md: number;
       lg: number;
+      xl: number;
     };
     fontFamily: {
       regular: string;

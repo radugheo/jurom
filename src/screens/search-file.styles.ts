@@ -11,7 +11,7 @@ export const createStyles = (theme: ThemeType) => {
     searchContainer: {
       flexDirection: "row",
       alignItems: "center",
-      backgroundColor: "#EBF5FF",
+      backgroundColor: theme.colors.secondaryBackground,
       margin: 16,
       padding: 12,
       borderRadius: 8,
@@ -20,7 +20,7 @@ export const createStyles = (theme: ThemeType) => {
       flex: 1,
       marginLeft: 8,
       fontSize: 16,
-      color: theme.colors.text.primary,
+      color: theme.colors.text.ternary,
     },
     recentSection: {
       paddingHorizontal: 16,
@@ -37,7 +37,7 @@ export const createStyles = (theme: ThemeType) => {
       alignItems: "center",
       paddingVertical: 12,
       borderBottomWidth: 1,
-      borderBottomColor: "#E5E7EB",
+      borderBottomColor: theme.colors.divider,
     },
     fileNumber: {
       fontSize: 16,
@@ -50,13 +50,13 @@ export const createStyles = (theme: ThemeType) => {
       color: theme.colors.text.secondary,
     },
     statusBadge: {
-      backgroundColor: "#DCFCE7",
+      backgroundColor: theme.inProgress.background,
       paddingVertical: 4,
       paddingHorizontal: 8,
       borderRadius: 4,
     },
     statusText: {
-      color: "#166534",
+      color: theme.inProgress.textColor,
       fontSize: 14,
     },
   });

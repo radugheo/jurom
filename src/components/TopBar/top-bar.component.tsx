@@ -5,11 +5,12 @@ import { useThemedStyles } from "../../hooks/use-themed-styles";
 
 export const TopBar: React.FC = () => {
   const styles = useThemedStyles(createStyles);
+  
   return (
-  <View style={styles.container}>
-    <View style={styles.innerContainer}>
-      <Text style={styles.title}>Jurom</Text>
+    <View style={styles.container}>
+      <View style={styles.innerContainer}>
+        <Text style={styles.title}>Jurom</Text>
+      </View>
     </View>
-  </View>
   );
 };
