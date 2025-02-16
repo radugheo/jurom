@@ -1,13 +1,8 @@
 import { StyleSheet } from "react-native";
 import { ThemeType } from "../utils/types";
 
-export const createStyles = (theme: ThemeType) => {
-  console.log("Styles being recreated");
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: theme.colors.background,
-    },
+const searchBoxStyles = (theme: ThemeType) => {
+  return {
     searchContainer: {
       flexDirection: "row",
       alignItems: "center",
@@ -19,34 +14,33 @@ export const createStyles = (theme: ThemeType) => {
     searchInput: {
       flex: 1,
       marginLeft: 8,
-      fontSize: 16,
+      fontSize: theme.typography.fontSize.md,
+      fontFamily: theme.typography.fontFamily.regular,
       color: theme.colors.text.ternary,
     },
-    recentSection: {
-      paddingHorizontal: 16,
-    },
-    sectionTitle: {
-      fontSize: 16,
-      fontWeight: "600",
-      marginBottom: 16,
-      color: theme.colors.text.primary,
-    },
+  };
+};
+
+const fileStyles = (theme: ThemeType) => {
+  return {
     fileItem: {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      paddingVertical: 12,
+      marginBottom: 12,
+      paddingBottom: 12,
       borderBottomWidth: 1,
       borderBottomColor: theme.colors.divider,
     },
     fileNumber: {
-      fontSize: 16,
-      fontWeight: "500",
       marginBottom: 4,
+      fontSize: theme.typography.fontSize.md,
+      fontFamily: theme.typography.fontFamily.semiBold,
       color: theme.colors.text.primary,
     },
     courthouse: {
-      fontSize: 14,
+      fontSize: theme.typography.fontSize.sm,
+      fontFamily: theme.typography.fontFamily.medium,
       color: theme.colors.text.secondary,
     },
     statusBadge: {
@@ -57,7 +51,35 @@ export const createStyles = (theme: ThemeType) => {
     },
     statusText: {
       color: theme.inProgress.textColor,
-      fontSize: 14,
+      fontSize: theme.typography.fontSize.sm,
+      fontFamily: theme.typography.fontFamily.medium,
     },
+  };
+};
+
+const recentSectionStyles = (theme: ThemeType) => {
+  return {
+    recentSection: {
+      paddingHorizontal: 16,
+    },
+    sectionTitle: {
+      fontSize: theme.typography.fontSize.md,
+      fontFamily: theme.typography.fontFamily.semiBold,
+      marginBottom: 16,
+      color: theme.colors.text.primary,
+    },
+    ...fileStyles(theme),
+  };
+};
+
+export const createStyles = (theme: ThemeType) => {
+  console.log("Styles being recreated");
+  return StyleSheet.create<any>({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.background,
+    },
+    ...searchBoxStyles(theme),
+    ...recentSectionStyles(theme),
   });
 };

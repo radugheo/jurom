@@ -14,8 +14,10 @@ const baseTheme = {
       xl: 28,
     },
     fontFamily: {
-      regular: "Montserrat-Regular",
-      bold: "Montserrat-Bold",
+      regular: "PlusJakartaSans-Regular",
+      medium: "PlusJakartaSans-Medium",
+      semiBold: "PlusJakartaSans-SemiBold",
+      bold: "PlusJakartaSans-Bold",
     },
   },
 };
@@ -24,29 +26,29 @@ export const theme: { light: ThemeType; dark: ThemeType } = {
   light: {
     ...baseTheme,
     topBar: {
-      background: "#2563EB",
-      textColor: "#FFFFFF",
+      background: "#F7F9FC",
+      textColor: "#172B4D",
     },
     inProgress: {
-      background: "#9FDDFF",
-      textColor: "#8594B3",
+      background: "#00B8D9",
+      textColor: "#1B2332",
     },
     colors: {
-      background: "#FFFFFF",
-      secondaryBackground: "#232B3D",
+      background: "#F7F9FC",
+      secondaryBackground: "#FFFFFF",
       surface: "#F3F4F6",
       accent: "#2563EB",
       text: {
-        primary: "#1F2937",
-        secondary: "#4B5563",
-        ternary: "#F9FAFB",
+        primary: "#172B4D",
+        secondary: "#5E6C84",
+        ternary: "#8594B3",
       },
       status: {
         success: "#059669",
         error: "#DC2626",
       },
       border: "#E5E7EB",
-      divider: "#2E364A",
+      divider: "#E4E9F2",
     },
   },
   dark: {

@@ -3,8 +3,10 @@ import React from "react";
 import { View, Text, TextInput } from "react-native";
 import { createStyles } from "./search-file.styles";
 import { useThemedStyles } from "../hooks/use-themed-styles";
+import { PortalJustService } from "../core/api/portal-just";
 
 export const SearchFileScreen: React.FC = () => {
+  const api = PortalJustService.getInstance();
   const styles = useThemedStyles(createStyles);
 
   return (
